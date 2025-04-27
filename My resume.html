@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Smith | Undergraduate Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 960px;
+            margin: 50px auto;
+            padding: 40px;
+            background: #ffffff;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-in-out;
+        }
+        .container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            border: 3px solid #2980b9;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #2c3e50;
+        }
+        p#contact {
+            font-size: 1.1em;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+        .section {
+            margin-bottom: 35px;
+        }
+        .section-title {
+            font-size: 1.6em;
+            color: #2980b9;
+            margin-bottom: 20px;
+            border-left: 5px solid #3498db;
+            padding-left: 12px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #ecf0f1;
+            text-align: left;
+        }
+        th {
+            background: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+        .skills, .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .skill-item, .project-item {
+            background: #eaf2f8;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        .project-item a {
+            display: inline-block;
+            margin-top: 8px;
+            background: #2980b9;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+        .project-item a:hover {
+            background: #1f5f85;
+        }
+        ul {
+            list-style: disc;
+            padding-left: 22px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="resumeContainer">
+        <div class="header">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-pic" id="profilePic">
+            <div>
+                <h1 id="name">John Smith</h1>
+                <p id="contact">Email: john.smith@example.com | Phone: 123-456-7890</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">About Me</div>
+            <p id="summary">Enthusiastic and motivated undergraduate student in Computer Engineering with a strong interest in web development, robotics, and AI. Eager to learn, contribute, and grow through hands-on experience in challenging projects and internships.</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Education</div>
+            <table id="education">
+                <thead>
+                    <tr>
+                        <th>Degree</th>
+                        <th>Institution</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>B.Eng. Computer Engineering</td>
+                        <td>ABC University</td>
+                        <td>2022 - Present</td>
+                    </tr>
+                    <tr>
+                        <td>High School Diploma</td>
+                        <td>XYZ High School</td>
+                        <td>2022</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Technical Skills</div>
+            <div class="skills" id="skills">
+                <div class="skill-item">C/C++</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">HTML/CSS</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">Arduino</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Academic Projects</div>
+            <div class="projects" id="projects">
+                <div class="project-item"><strong>Line Following Robot</strong> - Built an autonomous robot capable of following a predefined path using IR sensors and Arduino.<br><a href="https://github.com/johnsmith/line-follower" target="_blank">View on GitHub</a></div>
+                <div class="project-item"><strong>Personal Portfolio Website</strong> - Designed and developed a personal website to showcase my academic projects and skills.<br><a href="https://github.com/johnsmith/portfolio" target="_blank">View on GitHub</a></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            document.getElementById('resumeContainer').classList.add('visible');
+        };
+    </script>
+</body>
+</html>
